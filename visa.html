@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Services - Flykirkuk</title>
+        <script src="./style/tailwindmain.css"></script>
+
+
+    <style>
+
+          /* Start Subnav */
+
+.navbar__item:hover .header__subnav {
+  display: block;
+}
+
+.header__subnav {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 24px);
+  background-color: #fff;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  list-style: none;
+  z-index: 1;
+  display: none;
+}
+
+.header__subnav {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  background-color: #fff;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  list-style: none;
+  z-index: 1;
+  display: none;
+}
+
+
+.header__ex-subnav {
+  position: absolute;
+  left: calc(100% + 24px);
+  top: 0;
+  background-color: #fff;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  list-style: none;
+  z-index: 1;
+  display: none;
+}
+
+.subnav__item:hover .header__ex-subnav {
+  display: block;
+}
+
+.--subnav__after::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -24px;
+  background-color: transparent;
+  width: 24px;
+  height: 100%;
+}
+
+.subnav__item {
+  position: relative;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subnav__item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.subnav__item:last-child {
+  border-bottom: none;
+}
+
+.subnav__link {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  font-size: 15px;
+  letter-spacing: 2px;
+  width: 100%;
+}
+
+.subnav__item span {
+  display: inline-block;
+  padding: 2px 4px 2px 5px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #fff;
+}
+
+
+/* End Subnav */
+
+
+        .brand-primary {
+            color: #0051A5;
+        }
+
+        .brand-secondary {
+            color: #F7BA00;
+        }
+
+        .bg-brand-primary {
+            background-color: #0051A5;
+        }
+
+        .bg-brand-secondary {
+            background-color: #F7BA00;
+        }
+
+        .border-brand-primary {
+            border-color: #0051A5;
+        }
+
+        .header-scrolled {
+            background-color: #0051A5;
+            transition: background-color 0.3s ease;
+            border-bottom: 4px solid #F7BA00;
+        }
+
+        .visa-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .visa-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .process-step {
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: scale(1.05);
+        }
+
+        .country-flag {
+            width: 60px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 81, 165, 0.8) 0%, rgba(247, 186, 0, 0.8) 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .stat-counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0051A5;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: #F7BA00;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header id="main-header" class="z-50 fixed top-0 left-0 w-full transition-all duration-300">
+        <div class="container mx-auto px-4 pb-4 pt-2">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="./logo.svg" alt="Flykirkuk Logo" class="w-24 lg:w-40 drop-shadow-lg object-cover">
+                </div>
+                <div class="flex justify-center text-xs space-x-4 lg:space-x-8 lg:text-lg">
+                    <ul class="flex justify-center text-xs space-x-4 lg:space-x-8 lg:text-lg items-center">
+                      <li>
+                         <a href="./index.html" class="text-white hover:text-yellow-300 transition-colors font-medium drop-shadow-md">Home</a>
+                        </li>
+                       <li class="relative navbar__item">
+                         <a href="#" class="text-white hover:text-yellow-300 transition-colors font-medium drop-shadow-md">Services</a>
+                           <ul class="header__subnav absolute left-1/2 transform -translate-x-1/2 mt-2">
+                               <li class="subnav__item"><a href="file:///C:/Users/BLUE%20TECH/Desktop/flykirkuk/flight-booking.html" class="subnav__link">Flight Booking</a></li>
+                               <li class="subnav__item"><a href="file:///C:/Users/BLUE%20TECH/Desktop/flykirkuk/Hotel%20Reservation.html" class="subnav__link">Hotel Reservation</a></li>
+                               <li class="subnav__item"><a href="file:///C:/Users/BLUE%20TECH/Desktop/flykirkuk/package.html" class="subnav__link">Tour Packages</a></li>
+                               <li class="subnav__item"><a href="file:///C:/Users/BLUE%20TECH/Desktop/flykirkuk/Travel%20Insurance.html" class="subnav__link">Travel Insurance</a></li>
+                               <li class="subnav__item"><a href="file:///C:/Users/BLUE%20TECH/Desktop/flykirkuk/visa.html" class="subnav__link">Visa Assistance</a></li>
+                               <li class="subnav__item"><a href="file:///C:/Users/BLUE%20TECH/Desktop/flykirkuk/Support.html" class="subnav__link">24/7 Support</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074" 
+                 alt="Passport and visa background" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 floating-element">
+            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="absolute bottom-32 right-16 floating-element" style="animation-delay: -2s;">
+            <div class="w-12 h-12 bg-yellow-400 bg-opacity-30 rounded-lg backdrop-blur-sm"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <div class="max-w-4xl mx-auto">
+                <div class="inline-flex items-center px-6 py-3 bg-white bg-opacity-10 backdrop-blur-sm rounded-full border border-white border-opacity-20 mb-8">
+                    <svg class="w-5 h-5 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <span class="text-white font-semibold">Expert Visa Services</span>
+                </div>
+
+                <h1 class="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+                    Your <span class="text-yellow-400">Visa Journey</span><br>
+                    Starts Here
+                </h1>
+
+                <p class="text-xl lg:text-2xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
+                    Professional visa assistance for over 50+ countries. Fast, reliable, and hassle-free visa processing with expert guidance every step of the way.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <button class="px-10 py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-lg rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-yellow-500/25 hover:scale-105">
+                        Start Application
+                    </button>
+                    <button class="px-10 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-2xl transition-all duration-300 hover:bg-white hover:text-gray-900">
+                        Check Requirements
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white rounded-full mt-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="stat-counter group-hover:scale-110 transition-transform duration-300">50+</div>
+                    <div class="stat-label">Countries Covered</div>
+                </div>
+                <div class="text-center group">
+                    <div class="stat-counter group-hover:scale-110 transition-transform duration-300">98%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="text-center group">
+                    <div class="stat-counter group-hover:scale-110 transition-transform duration-300">5000+</div>
+                    <div class="stat-label">Visas Processed</div>
+                </div>
+                <div class="text-center group">
+                    <div class="stat-counter group-hover:scale-110 transition-transform duration-300">7 - 14</div>
+                    <div class="stat-label">Days Processing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Popular <span class="text-brand-primary">Visa Destinations</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We process visas for the world's most popular travel destinations with fast and reliable service.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Schengen Visa -->
+                <div class="visa-card rounded-3xl p-8 group">
+                    <div class="flex items-center mb-6">
+                        <img src="https://flagcdn.com/w80/eu.png" alt="European Union" class="country-flag mr-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Schengen Visa</h3>
+                            <p class="text-gray-600">26 European Countries</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Processing Time:</span>
+                            <span class="font-semibold text-brand-primary">10 - 15 days</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Validity:</span>
+                            <span class="font-semibold text-brand-primary">Up to 90 days</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Multiple Entry:</span>
+                            <span class="font-semibold text-green-600">Available</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-brand-primary text-white rounded-xl hover:bg-opacity-90 transition-all duration-300 font-semibold group-hover:shadow-lg">
+                        Apply Now
+                    </button>
+                </div>
+
+                <!-- USA Visa -->
+                <div class="visa-card rounded-3xl p-8 group">
+                    <div class="flex items-center mb-6">
+                        <img src="https://flagcdn.com/w80/us.png" alt="United States" class="country-flag mr-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">USA Visa</h3>
+                            <p class="text-gray-600">Tourist & Business</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Processing Time:</span>
+                            <span class="font-semibold text-brand-primary">3 - 5 weeks</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Validity:</span>
+                            <span class="font-semibold text-brand-primary">10 years</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Multiple Entry:</span>
+                            <span class="font-semibold text-green-600">Yes</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-brand-primary text-white rounded-xl hover:bg-opacity-90 transition-all duration-300 font-semibold group-hover:shadow-lg">
+                        Apply Now
+                    </button>
+                </div>
+
+                <!-- UK Visa -->
+                <div class="visa-card rounded-3xl p-8 group">
+                    <div class="flex items-center mb-6">
+                        <img src="https://flagcdn.com/w80/gb.png" alt="United Kingdom" class="country-flag mr-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">UK Visa</h3>
+                            <p class="text-gray-600">Standard Visitor</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Processing Time:</span>
+                            <span class="font-semibold text-brand-primary">15 - 20 days</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Validity:</span>
+                            <span class="font-semibold text-brand-primary">6 months</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Multiple Entry:</span>
+                            <span class="font-semibold text-green-600">Yes</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-brand-primary text-white rounded-xl hover:bg-opacity-90 transition-all duration-300 font-semibold group-hover:shadow-lg">
+                        Apply Now
+                    </button>
+                </div>
+
+                <!-- Canada Visa -->
+                <div class="visa-card rounded-3xl p-8 group">
+                    <div class="flex items-center mb-6">
+                        <img src="https://flagcdn.com/w80/ca.png" alt="Canada" class="country-flag mr-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Canada Visa</h3>
+                            <p class="text-gray-600">Temporary Resident</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Processing Time:</span>
+                            <span class="font-semibold text-brand-primary">2 - 4 weeks</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Validity:</span>
+                            <span class="font-semibold text-brand-primary">Up to 10 years</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Multiple Entry:</span>
+                            <span class="font-semibold text-green-600">Yes</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-brand-primary text-white rounded-xl hover:bg-opacity-90 transition-all duration-300 font-semibold group-hover:shadow-lg">
+                        Apply Now
+                    </button>
+                </div>
+
+                <!-- Australia Visa -->
+                <div class="visa-card rounded-3xl p-8 group">
+                    <div class="flex items-center mb-6">
+                        <img src="https://flagcdn.com/w80/au.png" alt="Australia" class="country-flag mr-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Australia Visa</h3>
+                            <p class="text-gray-600">eVisitor (651)</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Processing Time:</span>
+                            <span class="font-semibold text-brand-primary">1 - 3 days</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Validity:</span>
+                            <span class="font-semibold text-brand-primary">12 months</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Multiple Entry:</span>
+                            <span class="font-semibold text-green-600">Yes</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-brand-primary text-white rounded-xl hover:bg-opacity-90 transition-all duration-300 font-semibold group-hover:shadow-lg">
+                        Apply Now
+                    </button>
+                </div>
+
+                <!-- Japan Visa -->
+                <div class="visa-card rounded-3xl p-8 group">
+                    <div class="flex items-center mb-6">
+                        <img src="https://flagcdn.com/w80/jp.png" alt="Japan" class="country-flag mr-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Japan Visa</h3>
+                            <p class="text-gray-600">Tourist Visa</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Processing Time:</span>
+                            <span class="font-semibold text-brand-primary">5 - 7 days</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Validity:</span>
+                            <span class="font-semibold text-brand-primary">90 days</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">Multiple Entry:</span>
+                            <span class="font-semibold text-orange-600">Single</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-brand-primary text-white rounded-xl hover:bg-opacity-90 transition-all duration-300 font-semibold group-hover:shadow-lg">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Simple <span class="text-brand-primary">4-Step Process</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Getting your visa has never been easier. Follow our streamlined process for quick and hassle-free visa approval.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="process-step text-center group">
+                    <div class="w-24 h-24 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-secondary transition-colors duration-300">
+                        <span class="text-3xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Choose Destination</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Select your destination country and visa type. We'll provide all requirements and documentation needed.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step text-center group">
+                    <div class="w-24 h-24 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-secondary transition-colors duration-300">
+                        <span class="text-3xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Submit Documents</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Upload your required documents securely through our platform or visit our office for assistance.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step text-center group">
+                    <div class="w-24 h-24 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-secondary transition-colors duration-300">
+                        <span class="text-3xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Processing</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our experts review and submit your application. Track progress through our real-time updates.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step text-center group">
+                    <div class="w-24 h-24 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-secondary transition-colors duration-300">
+                        <span class="text-3xl font-bold text-white">4</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Receive Visa</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Get your approved visa delivered to your location or collect from our office. Ready to travel!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-brand-primary via-blue-700 to-brand-secondary relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8">
+                Ready to Start Your Visa Application?
+            </h2>
+            <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
+                Join thousands of satisfied travelers who trusted us with their visa applications. Expert guidance, fast processing, and guaranteed success.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="https://www.facebook.com/Flykirkuky" target="_blank" 
+                   class="px-12 py-4 bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-lg rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-yellow-500/25 hover:scale-105">
+                    Get Started Today
+                </a>
+                <button class="px-12 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-2xl transition-all duration-300 hover:bg-white hover:text-gray-900">
+                    Contact Expert
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <img src="./logo.svg" alt="Flykirkuk Logo" class="w-32 mb-4 filter brightness-0 invert">
+                    <p class="text-gray-300 leading-relaxed">
+                        Your trusted visa partner since 2013. Making travel dreams come true with professional visa services.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="./index.html#services" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="./visa.html" class="text-gray-300 hover:text-white transition-colors">Visa</a></li>
+                        <li><a href="./package.html" class="text-gray-300 hover:text-white transition-colors">Packages</a></li>
+                        <li><a href="./index.html#about" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="./index.html#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>Kirkuk, Iraq</p>
+                        <p>info@flykirkuk.com</p>
+                        <p>+964 XXX XXX XXXX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 Flykirkuk. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleHeaderScroll() {
+            const header = document.getElementById('main-header');
+            const scrollY = window.scrollY;
+
+            if (scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', handleHeaderScroll);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            handleHeaderScroll();
+        });
+
+       
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
